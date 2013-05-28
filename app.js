@@ -186,7 +186,19 @@ ing.exec = function(callback)
 	if(typeof this.current.options == 'string')
 		this.current.options = { cwd: this.current.options };
 	
-	return exec(this.current.command, this.current.options, callback);
+	return exec(this.current.command, this.current.options, function(error, stdout, stderr)
+	{
+		if(stdout)
+			console.log('stdout:', stdout);
+		if(stderr)
+			console.log('stderr:', stderr);
+		
+		if(error)
+			console.log('error:', error);
+		
+		console.log('');
+		callback();
+	});
 }
 
 ing.mkdir = function(path)
