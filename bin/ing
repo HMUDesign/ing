@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+process.title = 'ing';
+
+var ing = require('../app.js');
+
+ing.do();

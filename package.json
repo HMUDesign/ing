@@ -1,0 +1,17 @@
+{
+  "name": "ing",
+  "version": "0.1a",
+  "description": "A tool for managing multiple git repositories in the same project (ala svn:remotes for git).",
+  "main": "app.js",
+  "author": "Christopher Baker <christopher@hmudesign.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HMUDesign/ing"
+  },
+  "dependencies": {
+    "nconf": "0.6.x"
+  },
+  "bin": {
+    "ing": "bin/ing"
+  }
+}
