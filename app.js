@@ -113,7 +113,7 @@ ing.init = function()
 	var path = this.packages[name].path;
 	
 	if(fs.existsSync(path))
-		return this.init()
+		return this.init();
 	
 	var uri = this.remotes[this.packages[name].remote];
 	if(name[0] == '/')
@@ -126,6 +126,7 @@ ing.init = function()
 	this.current.command = 'git clone ' + uri + ' .';
 	this.current.options = path;
 	
+	console.log('cloning',name,'to',path);
 	return this.exec(ing.init.bind(this));
 }
 
@@ -140,6 +141,8 @@ ing.iterate = function()
 		return this.iterate();
 	
 	this.current.options = path;
+	
+	console.log('executing on',name);
 	return this.exec(ing.iterate.bind(this));
 }
 
@@ -182,9 +185,6 @@ ing.exec = function(callback)
 {
 	if(typeof this.current.options == 'string')
 		this.current.options = { cwd: this.current.options };
-	
-	if(!callback)
-		callback = ing.exec.bind(this);
 	
 	return exec(this.current.command, this.current.options, callback);
 }

@@ -1,0 +1,16 @@
+{
+  "remotes":
+  {
+    "github-hmudesign": "git://github.com/HMUDesign",
+    "github": "git://github.com"
+  },
+  "packages":
+  {
+    "ing": "foo",
+    "HMUDesign/ing":
+    {
+      "path": "bar",
+      "remote": "github"
+    }
+  }
+}
