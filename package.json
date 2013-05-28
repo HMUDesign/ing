@@ -1,6 +1,6 @@
 {
   "name": "ing",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tool for managing multiple git repositories in the same project (ala svn:remotes for git).",
   "main": "app.js",
   "author": "Christopher Baker <christopher@hmudesign.com>",
