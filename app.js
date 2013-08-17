@@ -121,9 +121,13 @@ ing.init = function()
 	else
 		uri += '/' + name + '.git';
 	
+	var branch = '';
+	if(this.packages[name].branch)
+		branch = '-b ' + this.packages[name].branch + ' ';
+	
 	this.mkdir(path);
 	
-	this.current.command = 'git clone ' + uri + ' .';
+	this.current.command = 'git clone ' + branch + uri + ' .';
 	this.current.options = path;
 	
 	console.log('cloning',name,'to',path);
